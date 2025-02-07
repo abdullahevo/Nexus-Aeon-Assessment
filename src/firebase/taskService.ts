@@ -10,7 +10,7 @@ import {
   Timestamp
 } from 'firebase/firestore';
 import { db } from './config';
-import { Task, TaskFormData } from '../types/task';
+import { Task, TaskFormData } from '@/types/task';
 
 export class TaskService {
   private collectionName = 'tasks';
@@ -47,6 +47,7 @@ export class TaskService {
       ...updates,
       dueDate: updates.dueDate ? Timestamp.fromDate(updates.dueDate) : undefined
     };
+    console.log("🚀 ~ TaskService ~ updateTask ~ firestoreUpdates:", firestoreUpdates)
 
     await updateDoc(taskRef, firestoreUpdates);
   }
