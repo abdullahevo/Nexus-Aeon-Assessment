@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AsyncErrorBoundary: typeof import('./src/components/common/AsyncErrorBoundary.vue')['default']
+    ErrorBoundary: typeof import('./src/components/common/ErrorBoundary.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Pagination: typeof import('./src/components/common/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
